@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>杨君臣 · 医学人工智能博士生</title>
+  <!-- 引入 Font Awesome 6 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f0f5fa 0%, #e6edf4 100%);
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      margin: 0;
+      color: #1e2b3c;
+    }
+
+    .profile-card {
+      max-width: 880px;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: #ffffff;
+      box-shadow: 0 30px 50px rgba(0, 20, 40, 0.15), 0 10px 25px rgba(0, 32, 64, 0.1);
+      border-radius: 2.5rem;
+      padding: 2.5rem 2.8rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    /* 头部区域 */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .avatar-section {
+      position: relative;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, #0b3b5c, #1c5b7a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.8rem;
+      font-weight: 500;
+      color: white;
+      box-shadow: 0 15px 25px rgba(2, 48, 71, 0.3);
+      border: 3px solid white;
+      background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, rgba(11, 59, 92, 0.9) 80%);
+      transition: transform 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.03);
+    }
+
+    .title-info h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #0a3144;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 0.6rem 0 0.8rem;
+    }
+
+    .badge {
+      background: #e7f0f9;
+      color: #0b3b5c;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.35rem 1.1rem;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid rgba(11, 59, 92, 0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .badge i {
+      font-size: 0.9rem;
+      color: #1e6b8f;
+    }
+
+    .university {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2c4b64;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+      background: #f2f7fd;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      width: fit-content;
+    }
+
+    .university i {
+      color: #0f4c6b;
+      font-size: 1.2rem;
+    }
+
+    /* 简介段落 */
+    .bio-text {
+      background: #f6fafd;
+      border-radius: 1.8rem;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0 2rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #1e3b4f;
+      border-left: 5px solid #1c6b8f;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+      font-weight: 450;
+    }
+
+    .bio-text i {
+      color: #1c6b8f;
+      margin-right: 0.3rem;
+    }
+
+    /* 研究方向卡片网格 */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.3rem;
+      margin: 2rem 0 2.2rem;
+    }
+
+    .research-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 12px 24px -12px rgba(0, 55, 85, 0.12);
+      transition: all 0.25s;
+      border: 1px solid #e9f0f7;
+      backdrop-filter: blur(4px);
+    }
+
+    .research-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 30px -12px rgba(8, 67, 102, 0.2);
+      border-color: #b8d6ed;
+      background: #fafeff;
+    }
+
+    .research-icon {
+      font-size: 2.4rem;
+      color: #0f5b7a;
+      margin-bottom: 0.8rem;
+    }
+
+    .research-card h3 {
+      font-size: 1.2rem;
+      font-weight: 650;
+      color: #0a3144;
+      margin-bottom: 0.4rem;
+    }
+
+    .research-card p {
+      font-size: 0.9rem;
+      color: #3b5568;
+      line-height: 1.5;
+    }
+
+    /* 扩展介绍区域：多组学/泛基因组学突出 */
+    .extended-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .info-block {
+      flex: 1 1 240px;
+      background: #f3f8fe;
+      border-radius: 1.4rem;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid #d9e9f5;
+    }
+
+    .info-block h4 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0b3b5c;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .info-block ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .info-block li {
+      margin-bottom: 0.5rem;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      color: #1f4057;
+    }
+
+    .info-block li i {
+      color: #0f5b7a;
+      width: 1.2rem;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    /* 社交链接区域 */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.2rem;
+      margin-top: 2.2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #dce8f2;
+    }
+
+    .github-link {
+      background: #0d2b3e;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: 0.25s;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      font-size: 1rem;
+    }
+
+    .github-link:hover {
+      background: #123e56;
+      box-shadow: 0 12px 22px rgba(2, 48, 71, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #1e4057;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .contact-item i {
+      font-size: 1.2rem;
+      color: #0f4c6b;
+    }
+
+    @media (max-width: 600px) {
+      .profile-card {
+        padding: 1.8rem;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .title-info h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    
+    <!-- 头部：姓名、身份、学校 -->
+    <div class="header">
+      <div class="avatar-section">
+        <div class="avatar">
+          <span>杨</span>
+        </div>
+      </div>
+      <div class="title-info">
+        <h1>杨君臣</h1>
+        <div class="badge-group">
+          <span class="badge"><i class="fas fa-dna"></i> 药学博士生</span>
+          <span class="badge"><i class="fas fa-robot"></i> 医学人工智能</span>
+          <span class="badge"><i class="fas fa-laptop-medical"></i> 疾病建模</span>
+        </div>
+        <div class="university">
+          <i class="fas fa-university"></i> 南京大学 · 生命科学学院
+        </div>
+      </div>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="bio-text">
+      <i class="fas fa-quote-left"></i> 
+      我是杨君臣，目前于<strong>南京大学生命科学学院</strong>攻读药学博士学位。研究聚焦<strong>医学人工智能与疾病建模</strong>，致力于利用多组学数据与泛基因组学方法解析复杂疾病机制。希望通过计算与实验的结合，推动精准医学发展。
+      <i class="fas fa-quote-right"></i>
+    </div>
+
+    <!-- 核心研究方向卡片 -->
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="research-icon"><i class="fas fa-brain"></i></div>
+        <h3>医学人工智能</h3>
+        <p>深度学习 · 医学影像分析 · 临床决策支持</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>疾病建模</h3>
+        <p>预测模型 · 生存分析 · 数字病理</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>多组学整合</h3>
+        <p>基因组·转录组·蛋白质组·代谢组</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon"><i class="fas fa-project-diagram"></i></div>
+        <h3>泛基因组学</h3>
+        <p>结构变异 · 图形基因组 · 群体多样性</p>
+      </div>
+    </div>
+
+    <!-- 扩展介绍：多组学与泛基因组学详细说明 -->
+    <div class="extended-section">
+      <div class="info-block">
+        <h4><i class="fas fa-microscope"></i> 多组学探索</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> 单细胞多组学数据分析</li>
+          <li><i class="fas fa-check-circle"></i> 癌症基因组图谱(TCGA)整合</li>
+          <li><i class="fas fa-check-circle"></i> 药物响应生物标志物发现</li>
+          <li><i class="fas fa-check-circle"></i> 多模态融合与网络药理学</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4><i class="fas fa-dna"></i> 泛基因组学前沿</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> 人类泛基因组参考图谱</li>
+          <li><i class="fas fa-check-circle"></i> 结构变异(SV)检测与注释</li>
+          <li><i class="fas fa-check-circle"></i> 图形基因组构建</li>
+          <li><i class="fas fa-check-circle"></i> 群体遗传与疾病关联</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4><i class="fas fa-flask"></i> 计算药学</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> 药物重定位与虚拟筛选</li>
+          <li><i class="fas fa-check-circle"></i> 分子动力学模拟</li>
+          <li><i class="fas fa-check-circle"></i> 真实世界证据(RWE)</li>
+          <li><i class="fas fa-check-circle"></i> AI驱动的临床试验设计</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 社交链接 / 联系信息 -->
+    <div class="social-links">
+      <a href="#" class="github-link" target="_blank">
+        <i class="fab fa-github"></i> GitHub主页
+      </a>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i> yangjuchen@nju.edu.cn
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i> 南京 · 仙林校区
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-graduation-cap"></i> 博士生 · 药学
+      </div>
+    </div>
+
+    <!-- 底部装饰：表明随时更新 -->
+    <div style="margin-top: 1.2rem; font-size: 0.8rem; color: #6b7f8f; text-align: right; border-top: 1px dashed #cbdbe9; padding-top: 0.8rem;">
+      <i class="fas fa-sync-alt"></i> 持续更新 · 医学人工智能与多组学研究
+    </div>
+  </div>
+</body>
+</html>
