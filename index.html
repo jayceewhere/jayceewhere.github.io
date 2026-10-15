@@ -87,7 +87,7 @@
       color: #333;
     }
     .pub-item {
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
     .pub-title {
       font-weight: 500;
@@ -95,6 +95,24 @@
     .pub-journal {
       font-size: 0.9rem;
       color: #555;
+    }
+    .project-item {
+      margin-bottom:1.2rem;
+    }
+    .project-title {
+      font-weight:500;
+    }
+    .project-desc {
+      font-size:0.95rem;
+      color:#444;
+      margin:0.3rem 0 0.4rem;
+    }
+    a.ext-link {
+      color:#2c5282;
+      text-decoration:none;
+    }
+    a.ext-link:hover {
+      text-decoration:underline;
     }
     .contact {
       display: flex;
@@ -135,7 +153,7 @@
         <h1>Junchen Yang</h1>
         <p>Pharmacy PhD Candidate | Computational Biology & Medical AI</p>
         <div class="tag-group">
-          <span class="tag">Multi-Omics Integration</span>
+          <span class="tag">Multi‑Omics Integration</span>
           <span class="tag">Graph Neural Networks</span>
           <span class="tag">Cancer Subtyping</span>
           <span class="tag">Pangenomics</span>
@@ -146,20 +164,30 @@
     <section>
       <h2>About</h2>
       <p class="bio">
-        I am a PhD candidate in <strong>Pharmacy</strong> at the <strong>School of Life Sciences, Nanjing University</strong>. My research sits at the intersection of computational biology, medical artificial intelligence and precision oncology. I aim to develop interpretable deep learning frameworks to untangle tumor microenvironment heterogeneity, identify clinically actionable molecular biomarkers, and advance AI-assisted patient stratification and therapeutic response prediction.
+        I am a PhD candidate in <strong>Pharmacy</strong> at the <strong>School of Life Sciences, Nanjing University</strong>. My research sits at the intersection of computational biology, medical artificial intelligence and precision oncology. I aim to develop interpretable deep learning frameworks to untangle tumor microenvironment heterogeneity, identify clinically actionable molecular biomarkers, and advance AI‑assisted patient stratification and therapeutic response prediction.
         <br><br>
-        During my master’s training, I focused on pangenomics, transposable elements and population-scale genomic analysis, with peer-reviewed publications in plant comparative genomics. Now I extend these computational toolkits into human cancer multi-omics, to bridge basic genomic discovery and translational pharmaceutical research.
+        During my master’s training, I focused on pangenomics, transposable elements, and population‑scale genomic analysis, with multiple peer‑reviewed publications and a public pangenome database for peanut. Now I extend these computational toolkits into human cancer multi‑omics, bridging basic genomic discovery and translational pharmaceutical research.
       </p>
     </section>
 
     <section>
       <h2>Research Interests</h2>
       <ul>
-        <li><strong>Interpretable Graph Learning for Cancer Precision Subtyping</strong>: Build masked multi-omics graph transformers to integrate transcriptomic, genomic and clinical data; dissect immune ecosystem stratification in MSS/pMMR colorectal cancer for immunotherapy patient selection.</li>
-        <li><strong>Multi-Omics Foundation Model & Representation Learning</strong>: Develop biologically informed deep learning to fuse bulk, single-cell and spatial omics data; extract robust disease signatures while retaining model interpretability for clinical trust.</li>
+        <li><strong>Interpretable Graph Learning for Cancer Precision Subtyping</strong>: Build masked multi‑omics graph transformers to integrate transcriptomic, genomic and clinical data; dissect immune ecosystem stratification in MSS/pMMR colorectal cancer for immunotherapy patient selection.</li>
+        <li><strong>Multi‑Omics Foundation Model & Representation Learning</strong>: Develop biologically informed deep learning to fuse bulk, single‑cell and spatial omics data; extract robust disease signatures while retaining model interpretability for clinical trust.</li>
         <li><strong>Pangenomics & Structural Variation Biology</strong>: Characterize repetitive elements, transposon dynamics and subgenome asymmetry; build computational pipelines for graph pangenome and population genomic variation mining.</li>
-        <li><strong>AI-Driven Translational Pharmacology</strong>: Biomarker discovery, survival risk modeling, computational drug response prediction, and bioinformatics database construction for omics data sharing.</li>
+        <li><strong>AI‑Driven Translational Pharmacology</strong>: Biomarker discovery, survival risk modeling, computational drug response prediction, and bioinformatics database construction for omics data sharing.</li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="project-item">
+        <div class="project-title">PeanutPangene: Integrated Peanut Pangenomic Database <a class="ext-link" href="https://peanuthome.scau.edu.cn/" target="_blank"><i class="fas fa-external-link-alt"></i> Project Website</a></div>
+        <div class="project-desc">
+          Co‑first author. Constructed a comprehensive peanut pangenome resource, integrating multiple peanut reference genomes, collinearity analysis tools, BLAST, graph‑based pangenome visualization, GO enrichment and gene‑card query services for peanut genomics and breeding research.
+        </div>
+      </div>
     </section>
 
     <section>
@@ -170,17 +198,29 @@
       </div>
       <div class="pub-item">
         <div class="pub-title">PeanutPangene: An integrated pangenomic database for peanut improvement</div>
-        <div class="pub-journal"><strong>Plant Communications</strong> (Cell Press, Q1, Co-author)</div>
+        <div class="pub-journal"><strong>Plant Communications</strong> (Cell Press, Q1, Co‑first author)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Unraveling the Genetic Architecture of Peanut Pod‑Related Traits Via Genome‑Wide Association Study</div>
+        <div class="pub-journal"><strong>Plant Molecular Biology Reporter</strong>, 2025 (First author)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Genome‑Wide Association Studies Revealed Genetic Loci and Candidate Genes for Pod‑Related Traits in Peanut</div>
+        <div class="pub-journal"><strong>Plant Molecular Biology Reporter</strong>, 2024 (Third author)</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Identification of QTLs for Shell Strength in Cultivated Peanut (Arachis hypogaea L.) Through GWAS Analysis</div>
+        <div class="pub-journal"><strong>Plant Molecular Biology Reporter</strong> (Third author)</div>
       </div>
     </section>
 
     <section>
       <h2>Technical Skills</h2>
       <ul>
-        <li>Python / R, Linux Shell, high-throughput omics data processing & pipeline development</li>
+        <li>Python / R, Linux Shell, high‑throughput omics data processing & pipeline development</li>
         <li>Graph Neural Networks, Transformer, contrastive learning, survival analysis, statistical validation</li>
-        <li>RepeatMasker, LTRharvest, pangenome construction, PAV/SV annotation, population genomics</li>
-        <li>Single-cell RNA-seq, spatial transcriptomics, multi-omics integration, scientific visualization</li>
+        <li>RepeatMasker, LTRharvest, pangenome construction, PAV/SV annotation, population genomics, GWAS analysis</li>
+        <li>Single‑cell RNA‑seq, spatial transcriptomics, multi‑omics integration, scientific visualization, web database curation</li>
       </ul>
     </section>
 
